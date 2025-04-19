@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <title>PASSWORD MANAGER</title>
+    <style>
+        *
+        {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+        body
+        {
+            background-color: #222;
+        }
+        header
+        {
+            height: 60px;
+            width: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: white;
+        }
+        main
+        {
+            padding: 10px;
+            flex: 1;
+            height: 85vh;
+        }
+        .searchContainer
+        {
+            height: 50px;
+            width: 100%;
+            background: rgba(225,225,225,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.5s;
+        }
+        .searchContainer:hover
+        {
+            background: linear-gradient(140deg,transparent,rgba(173, 216, 230, 0.705));
+        }
+        .abc
+        {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            gap: 10px;
+        }
+        .text
+        {
+            height: 35px;
+            width: 100%;
+            font-size: 18px;
+            outline: none;
+            border-radius: 10px;
+            background: transparent;
+            padding: 5px;
+            border: none;
+            color: white;
+        }
+        .chekpa
+        {
+            height: 35px;
+            width: 100%;
+            font-size: 18px;
+            outline: none;
+            border-radius: 10px;
+            background: transparent;
+            padding: 5px;
+            border: none;
+            color: white;
+        }
+        .searchBut
+        {
+            height: 50px;
+            width: 50px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            background-color: rgba(0, 0, 0, 0.1);
+            color: white;
+            cursor: pointer;
+        }
+        .listContaienr
+        {
+            width: 100%;
+            height: 85vh;
+            margin-top: 10px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, fr));
+            align-items: start;
+            gap: 15px;
+            overflow-y: scroll;
+            position: relative;
+            padding-bottom: 10px;
+            color: white;
+        }
+        .listContaienr::-webkit-scrollbar
+        {
+            display: none;
+        }
+        .passwordBox
+        {
+            padding: 10px;
+            word-wrap: break-word;
+            width: calc(100% - 20px);
+            height: max-content;
+            background-color: rgb(65, 105, 225);
+            border-radius: 5px;
+            transition: 0.5s;
+        }
+        .passwordBox:hover
+        {
+            background: linear-gradient(140deg,transparent,rgba(173, 216, 230, 0.705));
+        }
+        .passTitle,.passLink
+        {
+            padding: 5px;
+            font-size: 18px;
+            word-wrap: break-word;
+        }
+        .passPassword
+        {
+            padding: 8px 10px;
+            font-size: 18px;
+            width: max-content;
+            border: none;
+            outline: none;
+            background: rgba(225,225,225,0.1);
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+        }
+        .addPass
+        {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            height: 50px;
+            width: 50px;
+            border-radius: 5px;
+            background-color: rgba(225,225,225,0.1);
+            backdrop-filter: blur(15px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 25px;
+            color: white;
+            z-index: 1;
+        }
+        .dropContainer
+        {
+            position: fixed;
+            top: -50%;
+            background-color: royalblue;
+            border-radius: 10px;
+            width: 98.5%;
+            transition: 2s;
+
+        }
+        .dropForm
+        {
+            padding: 10px;
+            display: flex;
+            align-items: start;
+            flex-direction: column;
+            gap: 10px;
+        }
+        ::placeholder
+        {
+            color: white;
+        }
+        ion-icon
+        {
+            font-size: 20px;
+        }
+        @media (max-width: 670px) {
+            .passwordBox
+        {
+            word-wrap: break-word;
+            width: 95%;
+            height: max-content;
+            background-color: rgba(225,225,225,0.1);
+            border-radius: 5px;
+        }
+        .dropContainer
+        {
+            position: fixed;
+            top: -50%;
+            background-color: royalblue;
+            border-radius: 10px;
+            width: 96%;
+            transition: 2s;
+
+        }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 style="margin-left: 5px;">Password Manager</h1>
+        <p style="font-size: 18px;margin-right: 10px;">{{ username }}</p>
+    </header>
+    <main>
+        <!--<div class="searchContainer">
+            <form class="abc">
+                <input type="text" class="text" placeholder="search">
+                <button class="searchBut"><ion-icon name="search-outline"></ion-icon></button>
+            </form>
+        </div>-->
+        <div class="listContaienr">
+            {% for lib in lib %}
+            <div class="passwordBox">
+                <h1 class="passTitle">{{lib.title}}</h1>
+                <p class="passLink">{{lib.hreflink}}</p>
+                <div style="display: flex;align-items: center;gap: 10px;">
+                    <input class="passPassword" type="password" value="{{lib.editpass}}" readonly>
+                    <p style="padding: 5px;cursor: pointer;" onclick="showc(this)"><ion-icon name="eye-outline"></ion-icon></p>
+                </div>
+                <form style="margin-top: 10px;" action="{{ url_for('delete', id=lib.id) }}" method="post">
+                    <button style="padding: 10px;border: none;background-color: white;border-radius: 5px;cursor: pointer;" type="submit" type="submit">Delete</button>
+                </form>
+            </div>
+            {% endfor %}
+            <div class="dropContainer" id="container">
+                <form class="dropForm" onsubmit="mysub(event, this)">
+                    <p style="font-size: 18px;">Enter your Login Password to show that password</p>
+                    <input type="password" style="border-bottom: 2px solid white;border-radius: 0px;width: 90%;" class="chekpa" placeholder="Password" required>
+                    <div style="display: flex;align-items: center;gap: 10px;">
+                        <button style="padding: 10px;border: none;background-color: white;border-radius: 5px;cursor: pointer;" type="submit">SUBMIT</button>
+                        <p style="padding: 9px;border: none;background-color: white;color: black; border-radius: 5px;cursor: pointer;" onclick="hidec()">Cancel</p>
+                    </div>
+                </form>
+            </div>
+            <a href="{{ url_for('createpassword') }}" class="addPass">+</a>
+        </div>
+    </main>
+</body>
+</html>
+<script>
+    let currentPasswordField = null;
+
+    function showc(button) {
+        const passwordBox = button.closest('.passwordBox');
+        currentPasswordField = passwordBox.querySelector('.passPassword');
+        document.getElementById('container').style.top = "10%";
+    }
+
+    function hidec(){
+        document.getElementById('container').style.top = "-50%";
+    }
+
+    function mysub(event, form){
+        event.preventDefault();  // Prevent form submission
+        const securePassword = "{{ password }}";  // Assuming this is set correctly on the backend
+        const checkpa = form.querySelector('.chekpa');
+        if (checkpa.value === securePassword && currentPasswordField) {
+            currentPasswordField.type = 'text';  // Reveal the password
+            hidec();  // Hide the dropContainer after success
+            checkpa.value = '';
+        } else {
+            alert('Incorrect password');
+        }
+        setTimeout(() => {
+            currentPasswordField.type = 'password';
+        }, 10000);
+    }
+</script>

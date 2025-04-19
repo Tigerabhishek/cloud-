@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PASSWORD MANAGER</title>
+    <style>
+        *
+        {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            font-size: 18px;
+        }
+        body
+        {
+            background-color: #222;
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        a
+        {
+            text-decoration: none;
+            color: white;
+        }
+        main
+        {
+            padding: 10px;
+            flex: 1;
+            height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .createContainer
+        {
+            padding: 10px;
+            background: linear-gradient(150deg,rgba(225,225,225,0.1),rgba(173, 216, 230, 0.541));
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            position: relative;
+            width: 30%;
+        }
+        form
+        {
+            display: flex;
+            align-items: start;
+            flex-direction: column;
+            gap: 10px;
+            position: relative;
+        }
+        .title
+        {
+            padding: 8px 10px;
+            border: none;
+            outline: none;
+            background-color: rgba(225,225,225,0.1);;
+            color: white;
+            border-radius: 5px;
+            width: 95%;
+        }
+        .button
+        {
+            padding: 8px 10px;
+            color: black;
+            font-size: 18px;
+            border-radius: 5px;
+            border: none;
+            background-color: white;
+            cursor: pointer;
+            width: 100%;
+        }
+        @media (max-width: 670px) {
+            .createContainer
+        {
+            padding: 10px;
+            background: linear-gradient(150deg,rgba(225,225,225,0.1),rgba(173, 216, 230, 0.541));
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            position: relative;
+            width: 80%;
+        }
+            .title
+        {
+            padding: 8px 10px;
+            border: none;
+            outline: none;
+            background-color: rgba(225,225,225,0.1);;
+            color: white;
+            border-radius: 5px;
+            width: 94%;
+        }
+        }
+    </style>
+</head>
+<body>
+        <div class="createContainer">
+            <p style="color: white;padding: 10px;">Login</p>
+            <form action="alogin" method="post">
+                <input type="text" name="loginUsername" placeholder="Username" class="title">
+                <input type="password" name="loginPassword" placeholder="Password" class="title">
+                <button type="submit" class="button">Login</button>
+                <p style="color: white;padding: 10px;">Create a account <a style="text-decoration: underline;" href="{{ url_for('signup') }}">signup</a></p>
+            </form>
+        </div>
+</body>
+</html>

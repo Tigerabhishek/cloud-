@@ -3,968 +3,178 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HONE-CLOIDX</title>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <title>Abhishek - Resume</title>
     <style>
         *
         {
             margin: 0;
             padding: 0;
-            font-family: "Ubuntu Mono", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
-            font-size: 17px;
+            font-family: Arial, Helvetica, sans-serif;
             box-sizing: border-box;
-        }
-        button:focus, a:focus {
-            outline-offset: 2px;
-        }     
-        body
-        {
-            background-color: #272727;
-        }     
-        .world
-        {
-            position: relative;
-        display: flex;
-        gap: 10px;
-        position: relative;
         }
         header
         {
-            position: relative;
-            width: 20%;
-            height: 100vh;
-            color: white;
-            background-color: #202020;
-        }
-        .username
-        {
-            padding: 8px 10px;
-            border-radius: 5px;
-            background-color: #91757524;
-            transition: 1s;
-            cursor: pointer;
-        }
-        main
-        {
-            flex: 1;
-            padding: 10px;
-            position: relative;
-            width: 80%;
-            /* max-height: 100%;
-            min-height: max-content; */
-            height: calc(100vh - 20px);
-            overflow-y: scroll;
-        }
-        .fileWorld
-        {
-            position: relative;
-            
-        }
-        main::-webkit-scrollbar
-        {
-            width: 10px;
-            background-color: #202020;
-            border-radius: 10px;
-            padding: 2px;
-        }
-        main::-webkit-scrollbar-thumb
-        {
-            width: 5px;
-            background-color: #666;
-            border-radius: 10px;
-        }
-        .uploadfileContainer
-        {
-            background-color: #202020;
-            border-radius: 5px;
-            border-radius: 5px;
-            box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
-            color: white;
-            padding: 5px;
-            position: relative;
             display: flex;
             flex-direction: column;
-            gap: 10px;
-        }
-        .upFilebox
-        {
+            align-items: center;
+            padding: 10px;
             position: relative;
+        }
+        .headerContaienr
+        {
             display: flex;
             align-items: center;
-            justify-content: center;
-        }
-        #uploadfile
-        {
-            height: 80px;
+            justify-content: space-between;
+            padding: 10px;
             width: 100%;
-            z-index: 1;
-            opacity: 0;
-            cursor: pointer;
+            gap: 10px;
         }
-        .uploadBut
+        .headerBoxa
         {
-            position: absolute;
-            background-color: transparent;
-            border: 2px solid white;
-            cursor: pointer;
-            font-size: 20px;
-            width: 100%;
-            height: 100%;
-            border-radius: 5px;
-        }
-        .upFileboxb
-        {
-            width: 100%;
-            position: relative;
             display: flex;
             flex-direction: column;
             gap: 5px;
         }
-        #filename
+        .headerBoxb
         {
-            word-wrap: break-word;
-        }
-        .uploadButton
-        {
-            padding: 8px 10px;
-            border: none;
-            background: linear-gradient(45deg,#e40988, #f04400, #a6ff01);
-            color: white;
-            font-size: 16px;
-            border-radius: 5px;
-            cursor: pointer;
-            width: 100%;
-        }
-        .selectFolder
-        {
-            padding: 8px 10px;
-            border: none;
-            outline: none;
-            border-radius: 5px;
-        }
-        .crefol
-        {
-            padding: 10px 10px;
-            border: none;
-            outline: none;
-            border-radius: 5px;
-            width: calc(50% - 0px);
-        }
-        .crefolBut
-        {
-            padding: 8px 10px;
-            border-radius: 5px;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            width: calc(50% - 15px);
-        }
-        .imageWorld, .documentWorld
-        {
-            position: relative;
             display: flex;
             flex-direction: column;
-            gap: 10px;
-            padding: 5px;
-            
+            gap: 5px;
         }
-        .imageContainer
-        {
-            position: relative;
-            display: flex;
-            flex-wrap: wrap;
-            /* grid-template-columns: auto auto auto; */
-            gap: 10px;
-            justify-content: space-between;
-        }
-        .documentContainer
-        {
-            position: relative;
-            display: flex;
-            flex-wrap: wrap;
-            /* grid-template-columns: auto auto auto; */
-            gap: 10px;
-            justify-content: space-between;
-        }
-        .imageBox, .documentBox
-        {
-            position: relative;
-            padding: 5px;
-            border-radius: 5px;
-            background-color: #202020;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            gap: 10px;
-            width: 31%;
-        }
-        .image 
-        {
-            /* height: 150px;
-            width: 100%; */
-            width: 100%;
-            height: auto;
-            border-radius: 5px;
-        }
-        .miniimageBox
-        {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: self-start;
-            justify-content: space-between;
-            gap: 10px;
-        }
-        .imgDeleteBut
-        {
-            padding: 8px 10px;
-            border-radius: 5px;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .headerContainer
-        {
-            height: calc(100vh - 65px);
-            padding: 10px;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-        .headerBox
+        .headerLine
         {
             width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            overflow-y: scroll;
+            height: 3px;
+            background-color: #8f8a8a;
+            position: relative;
+            margin-top: 10px;
         }
-        .headerBox::-webkit-scrollbar
+        .headerLine::after
         {
-            display: none;
-        }
-        .foldernameb
-        {
-            padding: 8px 10px;
-            border-radius: 5px;
-            background-color: #91757524;
-            transition: 1s;
-            cursor: pointer;
-        }
-        #foldernameList
-        {
-            display: none;
-            flex-direction: column;
-            gap: 10px;
-        }
-        .folderasname
-        {
-            padding: 5px;
-            border-radius: 5px;
-            text-decoration: none;
-            transition: 1s;
-            cursor: pointer;
-            color: white;
-            text-decoration: none;
-        }
-        .headerFooter
-        {
-            display: flex;
-            align-items: center;
-            justify-content: start;
+            content: ' ';
+            width: 5%;
+            height: 3px;
+            background-color: #313030;
             position: absolute;
-            bottom: 0;
-            background-color: #91757524;
-            width: 100%;
-        }
-        .manuBut
-        {
-            display: none;
-        }
-        .mainBox
-        {
-            background-color: white;
-            padding: 10px;
-            gap: 10px;
-            display: flex;
-            flex-direction: column;
-            width: 200px;
-            color: black;
-            justify-content: space-between;
-        }
-        a
-        {
-            text-decoration: none;
-            color: black;
-        }
-        .doBut
-        {
-            padding: 8px;
-            background-color: royalblue;
-            color: white;
-            border: none;
-        }
-        .miniBox
-        {
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: space-between;
-        }
-        img
-        {
-            width: 180px;
-            height: auto;
-        }
-        .fileLink, .doBut
-        {
-            word-break: break-all;
-        }
-        @media (max-width: 900px) {
-            /* main 
-            {
-                background-color: #e40988;
-            } */
-            .imageContainer, .documentContainer
-        {
-            position: relative;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        }
-
-        @media (max-width: 890px) {
-        .world
-        {
-            position: relative;
-        }
-        header
-        {
-            height: 50px;
-            width: 100%;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-between;
-            color: white;
-            background-color: transparent;
-            backdrop-filter: blur(15px);
-            position: fixed;
-            z-index: 2;
-        }
-        .manuBut
-        {
-            display: block;
-            margin-right: 10px;
-            cursor: pointer;
-        }
-        .headerContainer
-        {
-            z-index: 2;
-            position: fixed;
-            top: 60px;
-            left: 10px;
-            height: calc(100vh - 90px);
-            width: 50%;
-            background-color: #202020;
-            backdrop-filter: blur(15px);
-            border-radius: 5px;
-            display: none;
-        }
-        .uploadButton
-        {
-            width: calc(50% - 30px);
-        }
-        .crefol
-        {
-            width: calc(50% - 14px);
-        }
-        .username
-        {
-            margin-right: 10px;
+            left: 0;
         }
         main 
         {
-            flex: 1;
+            position: relative;
             padding: 10px;
-            height:max-content;
-            width: calc(100% - 20px);
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            top: 50px;
-        }
-        main::-webkit-scrollbar
-        {
-            display: none;
-        }
-        .uploadfileContainer
-        {
-            background-color: #202020;
-            border-radius: 5px;
-            box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
-            padding: 5px;
-            position: relative;
             display: flex;
             flex-direction: column;
             gap: 10px;
         }
-        .upFilebox
+        .aboutmeContaienr
         {
-            position: relative;
             display: flex;
-            align-items: center;
-            justify-content: center;
+            flex-direction: column;
+            gap: 10px;
         }
-        #uploadfile
+        .imageBox
         {
-            height: 80px;
-            width: 100%;
-            z-index: 1;
-            opacity: 0;
-            cursor: pointer;
+            padding: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
         }
-        .uploadBut
+        .certiImg
         {
-            position: absolute;
-            background-color: transparent;
-            border: 2px solid white;
-            color: white;
-            cursor: pointer;
+            height: 400px;
+            width: 600px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0,0,0,0.5);
+        }
+        ion-icon
+        {
             font-size: 20px;
         }
-        .upFileboxb
-        {
-            width: 100%;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-        }
-        #filename
-        {
-            color: white;
-            word-wrap: break-word;
-        }
-        .uploadButton
-        {
-            padding: 8px 10px;
-            border: none;
-            background: linear-gradient(45deg,#e40988, #f04400, #a6ff01);
-            color: white;
-            font-size: 16px;
-            border-radius: 5px;
-            cursor: pointer;
-            width: 100%;
-        }
-        .crefolBut
-        {
-            padding: 8px 10px;
-            border-radius: 5px;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            width: 50%;
-        }
-        .selectFolder
-        {
-            padding: 8px 10px;
-            border: none;
-            outline: none;
-        }
-        .fileWorld
-        {
-            position: relative;
-        }
-        .imageWorld, .documentWorld
-        {
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            padding: 5px;
-            
-        }
-        .imageContainer, .documentContainer
-        {
-            position: relative;
-            display: flex;
-            flex-wrap: wrap;
-            grid-template-columns: auto auto;
-            gap: 10px;
-        }
-        .imageBox, .documentBox
-        {
-            position: relative;
-            padding: 5px;
-            border-radius: 5px;
-            background-color: #202020;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            width: 97%;
-        }
-        .image 
-        {
-            height: 150px;
-            width: 100%;
-            border-radius: 5px;
-
-        }
-        .miniimageBox
-        {
-            display: flex;
-            align-items: self-start;
-            justify-content: space-between;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-        .imgDeleteBut
-        {
-            padding: 8px 10px;
-            border-radius: 5px;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        }
-
-        @media (max-width: 450px) {
-            .imageContainer, .documentContainer
+        @media (max-width: 650px) {
+            .certiImg
             {
-                display: flex;
-                flex-direction: column;
-                gap: 10px;
-            }
-            .crefol
-            {
-                width: 100%;
-            }
-            .crefolBut
-            {
-                width: 100%;
-            }
-            .mainBox
-        {
-            background-color: white;
-            padding: 10px;
-            gap: 10px;
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            color: black;
-            justify-content: space-between;
-        }
-            img 
-            {
-                width: 100%;
+                height: 250px;
+                width: 25s0px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="world">
-        <header id="header">
-            <h1 style="margin-left: 10px;font-size: 25px;">CLOUDEX</h1>
-            <div class="headerContainer" id="headercontainer">
-                <div class="headerBox">
-                    <p class="foldernameb" onclick="shFolder()" style="color: white;">Folders</p>
-                    <div id="foldernameList">
-                        
-                            <a href="/folder/1" class="folderasname">CLOUDX FOLDER</a>
-                        
-                            <a href="/folder/2" class="folderasname">NEW FOLDER</a>
-                        
-                    </div>
-                    <p class="foldernameb" id="themeWr" onclick="theam()"  style="color: white;">Light</p>
-                </div>
-                <div style="display: flex;align-items: center;padding: 5px;flex-direction: column;">
-                    <div style="display: flex;flex-wrap: wrap;gap: 5px;">
-                        <p style="color: #0cff43;">IMAGE STORAGE <span id="siValue"></span></p>
-                        <p style="color: yellow;">DOCUMENT STORAGE <span id="sdValue"></span></p>
-                    </div>
-                    <div style="display: flex;align-items: center;padding: 5px;width: 100%;position: relative;">
-                        <div id="totalimgSize" style="background-color: #0cff43;border-radius: 5px;width: 0%;"></div>
-                        <div id="totaldocSize" style="background-color: yellow;border-radius: 5px;width: 0%;"></div>
-                    </div>
-                </div>
-                <p class="username" style="color: white;">Abhishek</p>
+    <header>
+        <div class="headerContaienr">
+            <div class="headerBoxa">
+                <h1>ABHISHEK<br>MEVADA</h1>
+                <p>WEB DEVELOPER</p>
+                
             </div>
-            <p class="manuBut" onclick="openManu()" id="manuTitle">MANU</p>
-        </header>
-        <main>
-            <div class="uploadfileContainer">
-                <form action="/file" method="post" enctype="multipart/form-data" class="uploadForm">
-                    <div class="upFilebox">
-                        <input type="file" name="files" id="uploadfile">
-                        <button class="uploadBut" style="color: white;">Upload File</button>
-                    </div>
-                    <div class="upFileboxb">
-                        <p id="filename" style="padding: 5px;">file name</p>
-                        <button type="submit" class="uploadButton">Upload</button>
-                        <label for="folderSelect" style="color: white;">Select folder</label>
-                        <select name="folder_id" id="folderSelect" style="padding: 8px 10px;border-radius: 5px;outline: none;">
-                            <option value="">None</option>
-                            
-                            <option value="1">CLOUDX FOLDER</option>
-                            
-                            <option value="2">NEW FOLDER</option>
-                            
-                        </select>
-                    </div>
-                </form>
-                <div class="upFileboxb">
-                    <form action="/create_folder" method="post" style="display: flex;align-items: center;gap: 10px;">
-                        <div style="display: flex;align-items: center;gap: 10px;flex-wrap: wrap;width: 100%;">               
-                            <input type="text" name="folder_name" id="" class="crefol" placeholder="folder name">
-                            <button type="submit" style="background-color: royalblue;font-size: 18px;" class="crefolBut">Create Folder</button>
-                        </div>
-                    </form>
-                </div>
+            <div class="headerBoxb">
+                <p style="display: flex;align-items: center;gap: 10px;    word-break: break-all;"><ion-icon name="call-outline"></ion-icon> <a href="tel:+91 9510954023" style="text-decoration: none; color: black;">+91 9510954023</a></p>
+                <p style="display: flex;align-items: center;gap: 10px;    word-break: break-all;"><ion-icon name="mail-outline"></ion-icon> <a href="mailto:abhishekmevada85@gmail.com" style="text-decoration: none; color: black;">abhishekmevada85@gmail.com</a></p>
+                <p style="display: flex;align-items: center;gap: 10px;    word-break: break-all;"><ion-icon name="location-outline"></ion-icon> Mansa,Gandhinagar</p>
+                <p style="display: flex;align-items: center;gap: 10px;    word-break: break-all;"><ion-icon name="logo-linkedin"></ion-icon><a href="https://www.linkedin.com/in/abhishek-mevada-b85218321?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" style="text-decoration: none; color: black;">Linkdin Profile</a></p>
             </div>
-            <div class="fileWorld">
-                <div class="imageWorld">
-                    <h2 style="color: white;">Images</h2>
-                    <div class="imageContainer">
-                        
-                            
-                                
-                            
-                                
-                            
-                                
-                                    
-                                        
-                                        <div class="mainBox">
-                                            <img src="/static/upload/general/imga.jpg" alt="imga.jpg" class="uploadImg">
-                                            <div>
-                                                <a href="/static/upload/general/imga.jpg" class="fileLink">imga.jpg</a>
-                                                <p>Size: <span class="imgsize">238.52</span></p>
-                                            </div>
-                                            <form action="/delete/3" method="post" class="miniBox">
-                                                <button type="submit" class="doBut">Delete</button>
-                                                <a href="/static/upload/general/imga.jpg" class="doBut" download="">Download</a>
-                                            </form>
-                                        </div>
-                                        
-                                    
-                                
-                            
-                                
-                                    
-                                        
-                                        <div class="mainBox">
-                                            <img src="/static/upload/general/downloaded-image_1.jpg" alt="downloaded-image_1.jpg" class="uploadImg">
-                                            <div>
-                                                <a href="/static/upload/general/downloaded-image_1.jpg" class="fileLink">downloaded-image_1.jpg</a>
-                                                <p>Size: <span class="imgsize">4.79</span></p>
-                                            </div>
-                                            <form action="/delete/16" method="post" class="miniBox">
-                                                <button type="submit" class="doBut">Delete</button>
-                                                <a href="/static/upload/general/downloaded-image_1.jpg" class="doBut" download="">Download</a>
-                                            </form>
-                                        </div>
-                                        
-                                    
-                                
-                            
-                                
-                            
-                                
-                                    
-                                        
-                                        <div class="mainBox">
-                                            <img src="/static/upload/general/18a554ba556a0a87db74d52fef531d35_1.jpg" alt="18a554ba556a0a87db74d52fef531d35_1.jpg" class="uploadImg">
-                                            <div>
-                                                <a href="/static/upload/general/18a554ba556a0a87db74d52fef531d35_1.jpg" class="fileLink">18a554ba556a0a87db74d52fef531d35_1.jpg</a>
-                                                <p>Size: <span class="imgsize">229.29</span></p>
-                                            </div>
-                                            <form action="/delete/18" method="post" class="miniBox">
-                                                <button type="submit" class="doBut">Delete</button>
-                                                <a href="/static/upload/general/18a554ba556a0a87db74d52fef531d35_1.jpg" class="doBut" download="">Download</a>
-                                            </form>
-                                        </div>
-                                        
-                                    
-                                
-                            
-                                
-                                    
-                                        
-                                        <div class="mainBox">
-                                            <img src="/static/upload/general/technology-hacker-hd-wallpaper-preview.jpg" alt="technology-hacker-hd-wallpaper-preview.jpg" class="uploadImg">
-                                            <div>
-                                                <a href="/static/upload/general/technology-hacker-hd-wallpaper-preview.jpg" class="fileLink">technology-hacker-hd-wallpaper-preview.jpg</a>
-                                                <p>Size: <span class="imgsize">52.91</span></p>
-                                            </div>
-                                            <form action="/delete/20" method="post" class="miniBox">
-                                                <button type="submit" class="doBut">Delete</button>
-                                                <a href="/static/upload/general/technology-hacker-hd-wallpaper-preview.jpg" class="doBut" download="">Download</a>
-                                            </form>
-                                        </div>
-                                        
-                                    
-                                
-                            
-                                
-                                    
-                                
-                            
-                                
-                                    
-                                
-                            
-                                
-                                    
-                                        
-                                        <div class="mainBox">
-                                            <img src="/static/upload/general/wa.jpg" alt="wa.jpg" class="uploadImg">
-                                            <div>
-                                                <a href="/static/upload/general/wa.jpg" class="fileLink">wa.jpg</a>
-                                                <p>Size: <span class="imgsize">43.76</span></p>
-                                            </div>
-                                            <form action="/delete/23" method="post" class="miniBox">
-                                                <button type="submit" class="doBut">Delete</button>
-                                                <a href="/static/upload/general/wa.jpg" class="doBut" download="">Download</a>
-                                            </form>
-                                        </div>
-                                        
-                                    
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                                    
-                                        
-                                        <div class="mainBox">
-                                            <img src="/static/upload/general/kali-linux-terminal1.png" alt="kali-linux-terminal1.png" class="uploadImg">
-                                            <div>
-                                                <a href="/static/upload/general/kali-linux-terminal1.png" class="fileLink">kali-linux-terminal1.png</a>
-                                                <p>Size: <span class="imgsize">23.81</span></p>
-                                            </div>
-                                            <form action="/delete/27" method="post" class="miniBox">
-                                                <button type="submit" class="doBut">Delete</button>
-                                                <a href="/static/upload/general/kali-linux-terminal1.png" class="doBut" download="">Download</a>
-                                            </form>
-                                        </div>
-                                        
-                                    
-                                
-                            
-                        
-                    </div>
-                </div>
-                <div class="documentWorld">
-                    <h2 style="color: white;">Document</h2>
-                    <div class="documentContainer">
-                        
-                            
-                                
-                            
-                                
-                            
-                                
-                                    
-                                
-                            
-                                
-                                    
-                                
-                            
-                                
-                            
-                                
-                                    
-                                
-                            
-                                
-                                    
-                                
-                            
-                                
-                                    
-                                        
-                                        <div class="mainBox">
-                                            <div class="">
-                                                <a href="/static/upload/general/phonelighthouse.pdf" style="text-decoration: none;" rel="noopener">phonelighthouse.pdf</a>
-                                                <p>Size: <span class="docsize">463.89 </span></p>
-                                            </div>
-                                                <form action="/delete/21" method="post" class="miniBox">
-                                                    <button type="submit" style="background-color: royalblue;color: white" class="doBut">DELETE</button>
-                                                    <a href="/static/upload/general/phonelighthouse.pdf" style="background-color: royalblue;text-decoration: none;" class="doBut" download="">Download</a>
-                                                </form>
-                                        </div>
-                                        
-                                    
-                                
-                            
-                                
-                                    
-                                        
-                                        <div class="mainBox">
-                                            <div class="">
-                                                <a href="/static/upload/general/test.py" style="text-decoration: none;" rel="noopener">test.py</a>
-                                                <p>Size: <span class="docsize">0.52 </span></p>
-                                            </div>
-                                                <form action="/delete/22" method="post" class="miniBox">
-                                                    <button type="submit" style="background-color: royalblue;color: white" class="doBut">DELETE</button>
-                                                    <a href="/static/upload/general/test.py" style="background-color: royalblue;text-decoration: none;" class="doBut" download="">Download</a>
-                                                </form>
-                                        </div>
-                                        
-                                    
-                                
-                            
-                                
-                                    
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                            
-                                
-                                    
-                                
-                            
-                                               
-                    </div>
-                </div>
+        </div>
+        <div class="headerLine"></div>
+    </header>
+    <main>
+        <div class="aboutmeContaienr">
+            <h2>ABOUT ME</h2>
+            <p>I am passionate and self-motivated Frontend Developer eager to apply my technical skills and creativity in real-world projects. I have experience working with <strong>HTML,CSS,JavaScript, Angular, Node.js, Express.js, Flask, SQLite, and MySQL</strong> to build dynamic and user-friendly web applications.<br><br>Through my projects, i have developed strong problem-solving skills and an understanding of both frontend and backend technologies. I am always eager to learn new technologies and improve my coding abilities. Seeking an internship where i can contribute, collabrate, and enhance my development skills while gaining hands-on industry experience.</p>
+            <div class="headerLine"></div>
+        </div>
+        <div class="aboutmeContaienr">
+            <h2>SKILLS</h2>
+            <p><strong>Frontend:</strong> HTML, CSS, JavaScript, Angular</p>
+            <p><strong>Backend:</strong> Falsk, Node.js, Express.js</p>
+            <p><strong>Databases:</strong> SQlite, MySQL</p>
+            <div class="headerLine"></div>
+        </div>
+        <div class="aboutmeContaienr">
+            <h2>PROJECTS</h2>
+            <h3>Blog Website</h3>
+            <a href="theblogs.pythonanywhere.com/" style="color: royalblue;font-weight: 600;">Blog Website</a>
+            <li>Built a blogging platform using Flask, HTML, CSS , and JavaScript.</li>
+            <li>Implemented user authentication and a content management system.</li>
+            <hr>
+            <h3>E-Commerce Website</h3>
+            <a href="ecommerce58.pythonanywhere.com/" style="color: royalblue;font-weight: 600;">E-Commerce Website</a>
+            <li>Developd a responsive e-commerce platform using Flask, HTML, CSS, and JavaScript.</li>
+            <li>Integrated product listing, cart, and checkout functionalities.</li>
+            <li>Stored product data in a structured database for dynamic retrieval.</li>
+            <h3>Password Manager</h3>
+            <a href="passwordsmanager.pythonanywhere.com/" style="color: royalblue;font-weight: 600;">Password Manager</a>
+            <li>Developed a secure password management system using Flask and SQLite.</li>
+            <li>Implemented encryption techniques for storing user passwords securely.</li>
+            <li>Integrated user authentication and password retrieval features.</li>
+            <h3>Healify Chatbot</h3>
+            <a href="healify.pythonanywhere.com/" style="color: royalblue;font-weight: 600;">Healify Chatbot</a>
+            <li>Created a chatbot using JavaScript, HTML, CSS, Json amd Flask to provide health-related assistance.</li>
+            <div class="headerLine"></div>
+        </div>
+        <div class="aboutmeContaienr">
+            <h2>EDUCATION</h2>
+            <p>Bachelor of Engineering</p>
+            <p>Shankersinh Vaghela Bapu Institue of Technology</p>
+            <div class="headerLine"></div>
+        </div>
+        <div class="aboutmeContaienr">
+            <h2>CERTIFICATE</h2>
+            <div class="imageBox">
+                <img src="imga.jpg" alt="Introduction to Web Development" class="certiImg" srcset="">
+                <img src="imgb.jpg" alt="Introduction to Web Development" class="certiImg" srcset="">
             </div>
-        </main>
-    </div>
-    <script>
-        document.getElementById("uploadfile").addEventListener("change", function() {
-    var file = this.files[0];
-
-    if(file){
-        document.getElementById("filename").textContent = file.name;
-    }
-    else{
-        document.getElementById("filename").textContent = "no file chosen";
-    }
-})
-
-const foldername = document.querySelectorAll('.foldername');
-foldername.forEach(element => {
-    element.onclick = function() {
-        var folderBox = document.getElementById('folderBox');
-        folderBox.style.display = 'block';
-    };
-});
-
-function openManu(){
-    var headercontainer = document.getElementById("headercontainer");
-
-    var manuTitle = document.getElementById("manuTitle");
-
-    if(headercontainer.style.display == 'flex'){
-        headercontainer.style.display = 'none';
-        manuTitle.innerHTML = 'MANU';
-    }
-    else
-    {
-        headercontainer.style.display = 'flex';
-        manuTitle.innerHTML = 'CLOSE';
-    }
-}
-
-function formatSize(sizeInKB) {
-        let size = parseFloat(sizeInKB);
-        if (size < 1024) return size.toFixed(2) + " KB";
-        else if (size < 1048576) return (size / 1024).toFixed(2) + " MB";
-        else return (size / 1048576).toFixed(2) + " GB";
-    }
-
-    // Convert document sizes
-    const docSizes = document.querySelectorAll('.docsize');
-    let totalDocSize = 0;
-
-    docSizes.forEach(sizeEl => {
-        const sizeKB = parseFloat(sizeEl.textContent.trim());
-        if (!isNaN(sizeKB)) {
-            totalDocSize += sizeKB;
-            sizeEl.textContent = formatSize(sizeKB);
-        }
-    });
-
-    // Display document storage values
-    const docStorage = formatSize(totalDocSize);
-    document.getElementById("sdValue").textContent = docStorage;
-
-    // Calculate width based on total doc size (assuming 1 GB = 100%)
-    const totalDocSizePercentage = Math.min((totalDocSize / 1048576) * 100, 100);
-    document.getElementById("totaldocSize").style.width = totalDocSizePercentage + "%";
-
-    // Convert image sizes
-    const imgSizes = document.querySelectorAll('.imgsize');  // Use 'imgsize' for images
-    let totalImageSize = 0;
-
-    imgSizes.forEach(sizeEl => {
-        const sizeKB = parseFloat(sizeEl.textContent.trim());
-        if (!isNaN(sizeKB)) {
-            totalImageSize += sizeKB;
-            sizeEl.textContent = formatSize(sizeKB);
-        }
-    });
-
-    // Display image storage values
-    const imgStorage = formatSize(totalImageSize);
-    document.getElementById("siValue").textContent = imgStorage;
-
-    // Calculate width based on total image size (assuming 1 GB = 100%)
-    const totalImageSizePercentage = Math.min((totalImageSize / 1048576) * 100, 100);
-    document.getElementById("totalimgSize").style.width = totalImageSizePercentage + "%";
-
-function shFolder(){
-var foldernameList = document.getElementById('foldernameList');
-
-if(foldernameList.style.display == 'flex'){
-    foldernameList.style.display = 'none';
-    }
-    else
-    {
-        foldernameList.style.display = 'flex';
-    }
-}
-
-function theam(){
-    var themeWr = document.getElementById('themeWr');
-
-    if (themeWr.innerHTML == "Dark"){
-        themeWr.innerHTML = "Light";
-        document.body.style.background = "#272727";
-        var header = document.getElementById('header');
-        header.style.color = 'white';
-        var uploadfileContainer = document.querySelector('.uploadfileContainer');
-        uploadfileContainer.style.background = '#202020';
-        uploadfileContainer.style.color = 'white';
-    }
-    else{
-        themeWr.innerHTML = "Dark";
-        document.body.style.background = "white";
-        var header = document.getElementById('header');
-        // header.style.background = '#f2f2f2';
-        header.style.color = 'black';
-        // var uploadfileContainer = document.querySelector('.uploadfileContainer');
-        // uploadfileContainer.style.background = '#f2f2f2';
-        // uploadfileContainer.style.color = 'black'; #0cff43
-    }
-}
-    </script>
+            <div class="headerLine"></div>
+        </div>
+        <div class="aboutmeContaienr">
+            <h2>SOFT SKILLS</h2>
+            <p>Problem Solving</p>
+            <p>Team Collaboration</p>
+            <p>Time Maangement</p>
+            <p>Adaptability</p>
+            <div class="headerLine"></div>
+        </div>
+    </main>
 </body>
 </html>
