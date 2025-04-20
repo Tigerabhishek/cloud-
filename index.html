@@ -539,9 +539,10 @@
         @media (max-width: 450px) {
             .imageContainer, .documentContainer
             {
-               display: grid;
-                grid-template-columns: auto auto;
-                gap: 10px;
+              display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 16px;
+  padding: 16px;
             }
             .crefol
             {
@@ -562,6 +563,15 @@
             .shoBUt
             {
                 display: block;
+            }
+            .mainBox {
+
+                border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  color: #fff;
+  font-family: 'Segoe UI', sans-serif;
             }
         }
     </style>
